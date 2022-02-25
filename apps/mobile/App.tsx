@@ -6,6 +6,7 @@ import {
   DefaultTheme,
   DarkTheme,
 } from "@react-navigation/native";
+import Tamagui from "./tamagui.config";
 
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
@@ -20,14 +21,16 @@ export default function App() {
     return null;
   }
   return (
-    <SafeAreaProvider>
-      <NavigationContainer
-        linking={navigationLinking}
-        theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-      >
-        <RootNavigator />
-      </NavigationContainer>
-      <StatusBar />
-    </SafeAreaProvider>
+    <Tamagui.Provider defaultTheme="light">
+      <SafeAreaProvider>
+        <NavigationContainer
+          linking={navigationLinking}
+          theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+        >
+          <RootNavigator />
+        </NavigationContainer>
+        <StatusBar />
+      </SafeAreaProvider>
+    </Tamagui.Provider>
   );
 }
