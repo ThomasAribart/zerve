@@ -9,8 +9,10 @@
     "tsconfig": "*",
     "typescript": "^4.5.5"
   },
-  "dependencies": {
-    "@zerve/core": "*",
+  "peerDependencies": {
     "react": "*"
+  },
+  "dependencies": {
+    "@zerve/core": "*"
   }
 }
